@@ -21,11 +21,13 @@ function! NextColor( method )
             let s:currentLight = 0
         endif
         execute 'colorscheme ' .  g:lightColorCarousel[s:currentLight]
+        let g:CURRENTCOLOR =   g:lightColorCarousel[s:currentLight]
     else
         if s:currentDark > len(g:darkColorCarousel)-1
             let s:currentDark = 0
         endif
         execute 'colorscheme ' .  g:darkColorCarousel[s:currentDark]
+        let g:CURRENTCOLOR =   g:darkColorCarousel[s:currentDark]
     endif
 
     redraw

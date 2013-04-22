@@ -1,7 +1,7 @@
 
 let s:currentLight = -1
 let s:currentDark = -1
-function! NextColor( method )
+function! ColorCarouselNextColor( method )
     if a:method == 'light'
         if s:currentLight == -1
             let s:currentLight = 0
@@ -33,6 +33,3 @@ function! NextColor( method )
     redraw
     echo g:colors_name
 endfunction
-
-noremap <F8> :call NextColor('light')<cr>
-noremap <F9> :call NextColor('dark')<cr>

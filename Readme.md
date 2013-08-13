@@ -36,7 +36,7 @@ manualy specify a 'colorscheme' in your *.vimrc*.
 
 # Mappings
 
-You can map the the function like this:
+You can map to the function like this:
 
     nnoremap <F8> :call ColorCarouselNextColor('light')<cr>
     nnoremap <F9> :call ColorCarouselNextColor('dark')<cr>

@@ -18,7 +18,7 @@ You can map the the function like this:
     nnoremap <F8> :call ColorCarouselNextColor('light')<cr>
     nnoremap <F9> :call ColorCarouselNextColor('dark')<cr>
 
-This maps cycling throug light colorschemes to <F8>. And maps <F9> to the dark
+This maps cycling throug light colorschemes to *F8*. And maps *F9* to the dark
 ones.
 
 #Configuration

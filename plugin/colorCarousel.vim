@@ -1,33 +1,41 @@
 
 let s:currentLight = -1
 let s:currentDark = -1
+if has('gui_running')
+    let s:lightArray = g:lightColorCarousel
+    let s:darkArray = g:darkColorCarousel
+else
+    let s:lightArray =g:terminalLightColorCarousel
+    let s:darkArray = g:terminalDarkColorCarousel
+endif
+
 function! ColorCarouselNextColor( method )
     if a:method == 'light'
         if s:currentLight == -1
             let s:currentLight = 0
-        elseif index(g:lightColorCarousel, g:colors_name) != -1 " current color is light
+        elseif index(s:lightArray, g:colors_name) != -1 " current color is light
             let s:currentLight += 1
         endif
     else
         if s:currentDark == -1
             let s:currentDark = 0
-        elseif index(g:darkColorCarousel, g:colors_name) != -1 " current color is dark
+        elseif index(s:darkArray, g:colors_name) != -1 " current color is dark
             let s:currentDark += 1
         endif
     endif
 
     if a:method=='light'
-        if s:currentLight > len(g:lightColorCarousel)-1
+        if s:currentLight > len(s:lightArray)-1
             let s:currentLight = 0
         endif
-        execute 'colorscheme ' .  g:lightColorCarousel[s:currentLight]
-        let g:CURRENTCOLOR =   g:lightColorCarousel[s:currentLight]
+        execute 'colorscheme ' .  s:lightArray[s:currentLight]
+        let g:CURRENTCOLOR =   s:lightArray[s:currentLight]
     else
-        if s:currentDark > len(g:darkColorCarousel)-1
+        if s:currentDark > len(s:darkArray)-1
             let s:currentDark = 0
         endif
-        execute 'colorscheme ' .  g:darkColorCarousel[s:currentDark]
-        let g:CURRENTCOLOR =   g:darkColorCarousel[s:currentDark]
+        execute 'colorscheme ' .  s:darkArray[s:currentDark]
+        let g:CURRENTCOLOR =   s:darkArray[s:currentDark]
     endif
 
     redraw

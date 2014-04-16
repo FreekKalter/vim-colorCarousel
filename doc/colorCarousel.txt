@@ -42,7 +42,7 @@ this to your .vimrc: >
 <
 If you would like it to remember the last used colorscheme when closing and
 restarting vim put this in your vimrc: >
-    
+
     " set the colorscheme used in last session
     autocmd VimEnter * execute 'colorscheme ' . g:CURRENTCOLOR
     " Save global vars in between startups
@@ -52,12 +52,12 @@ restarting vim put this in your vimrc: >
        execute 'colorscheme ' . g:CURRENTCOLOR
     endif
 <
-When you use the above lines to load the last selected colorscheme don't 
+When you use the above lines to load the last selected colorscheme don't
 manualy specify a 'colorscheme'.
 ==============================================================================
-Section 4: License                                     *colorCarouselMappings*
+Section 4: License                                     *colorCarouselLicencse*
 
-Copyright (c) 2013 Freek Kalter 
+Copyright (c) 2013 Freek Kalter
 Use of this source code is governed by the "Revised BSD License" that can be
-found in the LICENSE file. 
+found in the LICENSE file.
 

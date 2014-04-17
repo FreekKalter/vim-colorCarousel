@@ -11,12 +11,12 @@ endif
 
 function! ColorCarouselNextColor( method )
     if a:method == 'light'
-        set background=light
         if s:lightIndex == -1
             let s:lightIndex = 0
         elseif index(s:lightArray, g:colors_name) != -1 && background == 'light' " current color is light
             let s:lightIndex += 1
         endif
+        set background=light
 
         " rotate all themes in list
         if s:lightIndex > len(s:lightArray)-1
@@ -26,12 +26,12 @@ function! ColorCarouselNextColor( method )
         execute 'colorscheme ' .  s:lightArray[s:lightIndex]
         let g:CURRENTCOLOR = s:lightArray[s:lightIndex]
     else
-        set background=dark
         if s:darkIndex == -1
             let s:darkIndex = 0
         elseif index(s:darkArray, g:colors_name) != -1 && background == 'dark' " current color is dark
             let s:darkIndex += 1
         endif
+        set background=dark
 
         " rotate all themes in list
         if s:darkIndex > len(s:darkArray)-1

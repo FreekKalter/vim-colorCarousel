@@ -13,7 +13,7 @@ function! ColorCarouselNextColor( method )
     if a:method == 'light'
         if s:lightIndex == -1
             let s:lightIndex = 0
-        elseif index(s:lightArray, g:colors_name) != -1 && background == 'light' " current color is light
+        elseif index(s:lightArray, g:colors_name) != -1 && &background == 'light' " current color is light
             let s:lightIndex += 1
         endif
         set background=light
@@ -28,7 +28,7 @@ function! ColorCarouselNextColor( method )
     else
         if s:darkIndex == -1
             let s:darkIndex = 0
-        elseif index(s:darkArray, g:colors_name) != -1 && background == 'dark' " current color is dark
+        elseif index(s:darkArray, g:colors_name) != -1 && &background == 'dark' " current color is dark
             let s:darkIndex += 1
         endif
         set background=dark
